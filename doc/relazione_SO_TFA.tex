@@ -20,27 +20,25 @@
 \begin{document}
 \maketitle 
 \begin{abstract} 
-Questo documento mostra come realizzare un Sistema Operativo su microcontrollore ATMega328p al fine di esporlo come argomento di studio e realizzazione pratica in un Istituto Tecnico o in una Scuola Professionale, al fine di far apprendere agli studenti le tecniche per implementare Sistemi Operativi con strategia \textit{learning by doing}.
+Questo documento mostra come realizzare un Sistema Operativo su microcontrollore ATMega328p come argomento di studio e e realizzazione pratica nelle classi terminali di un Istituto Tecnico o di una Scuola Professionale ad indirizzo informatico. Lo scopo \'e quello di far comprendere agli studenti quali siano le componenti essenziali di un sistema operativo e come esse possano essere realizzate. Sebbene i concetti esposti siano complessi, gli studenti sono facilitati dalla presenza di un codice base eseguibile e potranno sperimentare la creazione di nuovi compiti o la modifica di parti del sistema. La strategia didattica presa a modello \'e quella del ``\textit{learning by doing}''.
 \end{abstract} 
  
 \tableofcontents % Prepara l'indice generale
  
 
-
-
-
-
-
 %This document accompanies source code for a simple operating system for micro-controllers.  The OS uses cooperative multitasking and handles a few different tasks (but you can easily add more).
 
 
-Questo documento spiega un semplice sistema operativo per microcontrollori . Il sistema operativo utilizza un multitasking cooperativo e gestisce alcuni compiti diversi (ma è possibile aggiungerne facilmente degli ulteriori) .
-\chapter{Bathos and Thos}
+Questo documento illustra come realizzare un semplice sistema operativo per microcontrollori.
+Il sistema operativo utilizza un multitasking cooperativo e gestisce alcuni compiti, permettendo diaggiungerne facilmente dei nuovi.
 
-Questo sistema viene ripreso da Bathos (Back Again Two Operating System) di Alessandro Rubini.  Bathos è uno spin-off di Thos (Two Hour Operating System) il sistema operativo in due ore.
-Per questo motivo, una parte della documentazione di Thos, tradotta in italiano, è inclusa in questa relazione. Esso descrive come scrivere l'intero sistema operativo in
-due ore. Tuttavia, Bathos è più di Thos, così alcune cose come la struttura del codice cambiano completamente, per ottenere una versione più portatile e flessibile; si aggiunge la funzione \texttt{printf}, alcuni driver e alcune altre cose.
-Questo senza cambiare le idee del progetto di base di Thos, nonostante il cambiamento nella struttura del codice.
+\chapter{Bathos e Thos}
+
+Questo sistema viene ripreso da Bathos (Born-Again Two Hours Operating System) di Alessandro Rubini.  Bathos è uno spin-off di Thos (Two Hours Operating System) il sistema operativo che egli realizza ed espone ai sui studenti universitari in due ore. Per ovvie ragioni non \'e possibile replicare la presentazione a studenti delle scuole medie superiori negli stessi tempi e negli stessi modi, ma l'impianto del sistema \`e tale da essere compreso anche dal target selezionato.
+
+Il presente lavoro include parte della documentazione di Thos, tradotta in italiano. Esso descrive la realizzazione di un intero sistema operativo ``giocattolo'' che Alessandro Rubini porta a compimento in due ore. Il codice sorgente che utilizziamo come base \'e quello di BA-Thos, che aggiunge funzionalit\'a a Thos, modificandone la struttura del codice, aggingendo la funzione \texttt{printf}, alcuni driver e altro ancora.
+L'impianto didattico, scopo del progetto, non viene intaccato e pertanto il progetto si presta ai nostri scopi.
+
 %Bathos is a spin-off of Thos, the Two-Hour Operating System.
 %For that reason, the complete documentation of Thos is included in
 %this manual: it describes how to write the whole OS in
@@ -53,7 +51,8 @@ Questo senza cambiare le idee del progetto di base di Thos, nonostante il cambia
 
 \section{Introduzione a Bathos}
 
-Dopo aver mostrato il progetto Thos agli studenti, essi potranno usarlo per fare progetti reali, e ciò può anche permettere di approfondire tematiche specifiche attraverso la pratica del gioco, ovvero con la pratica del learning by doing. Lo scopo di Bathos è quello di continuare lo sviluppo, l'aggiunta di una implementazione di \textit{printf}, così come alcuni driver di periferica. L'idea di base è comunque mantenere il codice più semplice possibile, evitando gli interrupt.
+Dopo aver mostrato il progetto Thos agli studenti, essi potranno usarlo per realizzare progetti reali, e ciò può anche permettere di approfondire tematiche specifiche attraverso la pratica del gioco, ovvero con la pratica del ``learning by doing''. Lo scopo di Bathos è quello di continuare lo sviluppo, l'aggiunta di una implementazione di \textit{printf}, così come alcuni driver di periferica. L'idea di base è comunque mantenere il codice più semplice possibile, evitando gli interrupt.
+
 %After showing the Thos project to my students,
 %several of them actually made real projects with it, and I found
 %myself playing with Thos as well.  So finally I decided to continue
@@ -74,7 +73,7 @@ Dopo aver mostrato il progetto Thos agli studenti, essi potranno usarlo per fare
 %\textit{git} repository is rooted on the complete history of Thos
 %up to .
 
-
+% Lo vogliamo lasciare???
 L'idea del documento è quella di fare un sistema operativo in `` due ore ''. L'attuale repository \textit{git} contiene tutto il progetto da Thos fino a Bathos. Al fine di analizzare il codice  in `` 2 ore '', come descritto nei capitoli iniziali di questo documento, si dovrebbe verificare il commit, in modo che Thos diventi Bathos - il primo passo è una ridenominazione di massa. La versione finale di Thos, contiene anche il supporto per Arduino e riferimenti di questo progetto. 
 
 \section{Introduction to Thos}
